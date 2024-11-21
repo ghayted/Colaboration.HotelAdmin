@@ -86,14 +86,14 @@ namespace HotelAdmin
         // Modifier un client
         private void ClientListView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            // Vérifiez que l'élément sélectionné est non nul et est un client
+            // Vérifiez si un client est sélectionné dans la liste
             if (ClientListView.SelectedItem is Client client)
             {
                 // Remplissez les champs du formulaire avec les données du client sélectionné
-                NomTextBox.Text = client.Nom;
-                EmailTextBox.Text = client.Email;
-                TelephoneTextBox.Text = client.Telephone;
-                AdresseTextBox.Text = client.Adresse;
+                NomTextBox.Text = client.Nom ?? string.Empty;
+                EmailTextBox.Text = client.Email ?? string.Empty;
+                TelephoneTextBox.Text = client.Telephone ?? string.Empty;
+                AdresseTextBox.Text = client.Adresse ?? string.Empty;
             }
             else
             {
@@ -104,6 +104,7 @@ namespace HotelAdmin
                 AdresseTextBox.Text = string.Empty;
             }
         }
+
         private void ModifierClient_Click(object sender, RoutedEventArgs e)
         {
             if (!TousLesChampsSontRemplis())

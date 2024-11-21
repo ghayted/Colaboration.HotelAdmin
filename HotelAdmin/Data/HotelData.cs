@@ -27,7 +27,7 @@ namespace HotelAdmin.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=localhost;Database=DataHotel;Trusted_Connection=True;TrustServerCertificate=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-D3A68EI\\MSSQLSERVER01;Database=DataHotel;Trusted_Connection=True;TrustServerCertificate=True;");
             }
         }
 
