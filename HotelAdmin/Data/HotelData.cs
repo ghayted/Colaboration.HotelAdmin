@@ -23,6 +23,13 @@ namespace HotelAdmin.Data
         public DbSet<Notification> NotificationsDB { get; set; }
 
         // Configuration des relations dans le modèle
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=localhost;Database=DataHotel;Trusted_Connection=True;");
+            }
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Mapper les tables
