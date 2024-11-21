@@ -27,9 +27,11 @@ namespace HotelAdmin.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=localhost;Database=DataHotel;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=localhost;Database=DataHotel;Trusted_Connection=True;TrustServerCertificate=True;");
             }
         }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Mapper les tables
