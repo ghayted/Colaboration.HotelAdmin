@@ -15,6 +15,7 @@ namespace HotelAdmin
             _clientService = new ClientService();
             ChargerClients();
         }
+        // Charger les clients dans le ListView
 
         // Charger les clients dans le ListView
         private void ChargerClients()
